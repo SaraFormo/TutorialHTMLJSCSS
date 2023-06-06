@@ -9,4 +9,5 @@ Comandos básicos para usar con git:
 | git pull origin master            | descarga los cambios de la rama master del repositorio origin |
 
 
- 
+ # Recuerda que si al hacer 'git push ...' te da un fallo relacionado con algún tipo de conflicto deberás de ejecutar primero 'git pull ...'
+ ## Para evitar esto lo mejor es ejecutar 'git pull ...' siempre antes de ejecutar 'git push ...'
