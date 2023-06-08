@@ -5,7 +5,76 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Ejercicio 2</title>
 </head>
+<script type="text/javascript">
+	var fechaActual = new Date();
+	fechaActual.setYear(fechaActual.getFullYear()-18);
+
+	var fechaLimite = fechaActual.getDay()+"-"+
+		(fechaActual.getMonth()+1)+"-"+
+		fechaActual.getFullYear();
+	var anoLimite = fechaLimite.split('-')[2];
+	var mesLimite = fechaLimite.split('-')[1];
+	var diaLimite = fechaLimite.split('-')[0];
+
+	function vaciarCasillaUsuario (){
+		
+		document.getElementById("fechaPropuestoUsuario").value = '';
+		document.getElementById("fechaPropuestoUsuario").focus();
+	}
+
+	function comprobarFecha(fecha) {
+		var ano = fecha.split('-')[2];
+		var mes = fecha.split('-')[1];
+		var dia = fecha.split('-')[0];
+
+		if (ano<anoLimite){
+			return true; 
+		}else if (ano>anoLimite){
+			return false;
+		}else{
+			if (mes<mesLimite) {
+				return true;
+			}else if (mes>mesLimite){
+				return false;
+			}else{
+				if (dia<diaLimite) {
+					return true;
+				}else if (dia>diaLimite){
+					return false;
+				}else{
+					return true;
+				}			
+			}
+		}
+	}
+
+	function recogerFechaUsuario() {
+		var campoUsuario = (document.getElementById("fechaPropuestoUsuario").value);
+
+		var puedeConducir = comprobarFecha(campoUsuario);
+
+		if(puedeConducir == true){
+			alert('Puedes conducir');
+		}else{
+			alert('No puedes conducir');
+		}
+	}
+	window.onload = function() {
+		vaciarCasillaUsuario();
+		console.log(fechaLimite)
+	};
+</script>
+
+
 <body>
 	<h1>Pide la edad y si es mayor de 18 años indica que ya puede conducir.	</h1>
+	
+	<h1>Para saber si puedes acceder a tu canet de conducir indicanos la fecha de tu nacimiento:
+	</h1>
+	
+	<p>¿Cúando naciste? <input type="text" placeholder="00-00-0000" id="fechaPropuestoUsuario" /> <button onclick="recogerFechaUsuario()">
+	Enviar</button>
+
+</p>
 </body>
 </html>
