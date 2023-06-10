@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+    <style>
+
+        .azul{
+            background-color: #00ff;
+            color: #fff;
+        }
+        .rojo{
+            background-color: #f00;
+            color: #fff;
+        }     
+
+        .amarillo{
+            background-color: #f9fb5b;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="pagina-web-con-animacion-gif.gif"> -->
+
+
+    <table border="1" style="width: 100%;">
+        <tr>
+            
+            <td></td>
+            <td>
+                <button onclick="cambiarColor('red')">rojo</button>
+            </td>
+        </tr>
+        <tr>
+            
+            <td id="celdaColor" style="">
+                Texto de la celda
+            </td>
+            <td>
+                <button onclick="cambiarColor('azul')">azul</button>
+            </td>
+        </tr>
+        <tr>
+            
+            <td></td>
+            <td>
+                <button onclick="cambiarColor('amarillo')">amarillo</button>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>
